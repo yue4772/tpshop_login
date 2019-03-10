@@ -15,8 +15,8 @@ def init_driver():
     # app的信息
     desired_caps['appPackage'] = 'com.tpshop.malls'
     desired_caps['appActivity'] = '.SPMainActivity'
-    # 不要重置应用
-    desired_caps['noReset'] = True
+    # # 不要重置应用
+    # desired_caps['noReset'] = True
     # toast
     desired_caps['automationName'] = 'Uiautomator2'
     # 声明我们的driver对象
