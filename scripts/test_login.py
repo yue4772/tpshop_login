@@ -14,14 +14,14 @@ class TestLogin:
     def teardown(self):
         self.driver.quit()
 
-    @pytest.mark.parametrize(("phone", "password", "expect"), analyze_file("login_data", "test_login"))
-    def test_login(self,phone,password,expect):
+    @pytest.mark.parametrize(("args"), analyze_file("login_data", "test_login"))
+    def test_login(self,args):
         self.page.home.click_mine()
         self.page.mine.click_login_and_sign_up()
-        self.page.login_and_sign_up.input_phone(phone)
-        self.page.login_and_sign_up.input_password(password)
+        self.page.login_and_sign_up.input_phone(args["phone"])
+        self.page.login_and_sign_up.input_password(args["password"])
         self.page.login_and_sign_up.click_login()
-        assert self.page.login_and_sign_up.is_login(expect)
+        assert self.page.login_and_sign_up.is_login(args["expect"])
 
 
         # self.page.login_and_sign_up_page.input_phone(phone)
