@@ -45,19 +45,19 @@ class TestLogin:
     #     assert  not self.page.login_and_sign_up.is_login_enable()
 
 
-    @pytest.mark.parametrize("password",[random_password(), random_password()])
-    def test_show_passwod(self, password):
-        self.page.home.click_mine()
-        self.page.mine.click_login_and_sign_up()
-        self.page.login_and_sign_up.input_password(password)
-        # 判断密码找不到
-        assert not self.page.login_and_sign_up.is_passwod_exist(password)
-        # 点击显示密码按钮
-        self.page.login_and_sign_up.click_show_password()
-        time.sleep(1)
-        allure.attach("截图", self.driver.get_screenshot_as_png(), allure.attach_type.PNG)
-        # 判断密码找到，找到就成功
-        assert self.page.login_and_sign_up.is_passwod_exist(password)
+    # @pytest.mark.parametrize("password",[random_password(), random_password()])
+    # def test_show_passwod(self, password):
+    #     self.page.home.click_mine()
+    #     self.page.mine.click_login_and_sign_up()
+    #     self.page.login_and_sign_up.input_password(password)
+    #     # 判断密码找不到
+    #     assert not self.page.login_and_sign_up.is_passwod_exist(password)
+    #     # 点击显示密码按钮
+    #     self.page.login_and_sign_up.click_show_password()
+    #     time.sleep(1)
+    #     allure.attach("截图", self.driver.get_screenshot_as_png(), allure.attach_type.PNG)
+    #     # 判断密码找到，找到就成功
+    #     assert self.page.login_and_sign_up.is_passwod_exist(password)
 
 
 
