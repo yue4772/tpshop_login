@@ -29,7 +29,7 @@ class LoginandsignupPage(BaseAction):
         self.click(self.show_password_button)
 
 
-    def is_login(self, content):
+    def is_login_seccess(self, content):
         try:
             self.find_toast(content)
             return True

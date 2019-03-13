@@ -13,15 +13,17 @@ class TestAddress:
 
     def test_address(self):
         self.page.home.click_mine()
-        self.page.mine.click_stting_button()
+        self.page.mine.click_stting()
         # 判断是否登录
-        if not self.page.mine.get_title_bar_text():
+        if not self.page.mine.is_login():
             # 登录
             self.page.login_and_sign_up.input_phone("13800138006")
             self.page.login_and_sign_up.input_password("123456")
             self.page.login_and_sign_up.click_login()
             # 根据toast判断是否登录成功
-            assert self.page.login_and_sign_up.is_login()
+            assert self.page.login_and_sign_up.is_login_seccess("登录成功")
         # 点击收货地址
+        self.page.mine.click_address()
+
 
 

@@ -33,8 +33,8 @@ class TestLogin:
     #     self.page.login_and_sign_up.input_phone(args["phone"])
     #     self.page.login_and_sign_up.input_password(args["password"])
     #     self.page.login_and_sign_up.click_login()
-    #     assert self.page.login_and_sign_up.is_login(args["expect"])
-
+    #     assert self.page.login_and_sign_up.is_login_seccess(args["expect"])
+    #
     # @pytest.mark.parametrize(("args"), analyze_file("login_data", "test_login_miss_part"))
     # def test_login_miss_part(self, args):
     #     self.page.home.click_mine()
@@ -43,8 +43,8 @@ class TestLogin:
     #     self.page.login_and_sign_up.input_password(args["password"])
     #     # 定位登录按钮是否可用、
     #     assert  not self.page.login_and_sign_up.is_login_enable()
-
-
+    #
+    #
     # @pytest.mark.parametrize("password",[random_password(), random_password()])
     # def test_show_passwod(self, password):
     #     self.page.home.click_mine()
