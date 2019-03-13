@@ -36,14 +36,5 @@ class MinePage(BaseAction):
 
     # 一边滑动一边找元素
     def click_address(self):
-        while True:
-            source = self.driver.page_source
-            # 点击收货地址
-            try:
-                self.find_element(self.address_button).click()
-                break
-            except Exception:
-                self.scroll_page_one_time()
-                if source == self.driver.page_source:
-                    raise Exception("滑动到底")
+        self.scroll_find_element(self.address_button).click()
 
