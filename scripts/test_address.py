@@ -22,8 +22,26 @@ class TestAddress:
             self.page.login_and_sign_up.click_login()
             # 根据toast判断是否登录成功
             assert self.page.login_and_sign_up.is_login_seccess("登录成功")
-        # 点击收货地址
+        # 2. 点击收货地址
         self.page.mine.click_address()
 
+        # 3. 点击新建地址
+        self.page.adress_list.click_new_adress()
 
+        # 4. 填写个人信息
+        # 4.1 填写联系人
+        self.page.adress_info.input_name("张三")
+
+        # 4.2 填写手机号
+        self.page.adress_info.input_phone("1888888")
+
+        # 4.3 填写详细地址
+        self.page.adress_info.input_adress("二号楼 三单元 106")
+
+        # 4.4 填写所在地区
+        self.page.adress_info.click_refion()
+        # 4.4.1 选择省、市、区、街道
+        self.page.adress_refion.click_city()
+        # 确定
+        self.page.adress_refion.click_commit()
 

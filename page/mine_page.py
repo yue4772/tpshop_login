@@ -35,6 +35,7 @@ class MinePage(BaseAction):
         return self.get_title_bar_text() == "设置"
 
     # 一边滑动一边找元素
+    @allure.step(title="一边滑动一边找，点击收货地址")
     def click_address(self):
         self.scroll_find_element(self.address_button).click()
 
