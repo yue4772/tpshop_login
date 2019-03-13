@@ -43,15 +43,7 @@ class MinePage(BaseAction):
                 self.find_element(self.address_button).click()
                 break
             except Exception:
-                # 根据屏幕分辨率，从4/3滑动到4/1
-                width = self.driver.get_window_size()["width"]
-                height = self.driver.get_window_size()["height"]
-                start_x = width * 0.5
-                start_y = height * 0.75
-                end_x = start_x
-                end_y = height * 0.25
-                # 滑动
-                self.driver.swipe(start_x, start_y, end_x, end_y, 3000)
+                self.scroll_page_one_time()
                 if source == self.driver.page_source:
                     raise Exception("滑动到底")
 
